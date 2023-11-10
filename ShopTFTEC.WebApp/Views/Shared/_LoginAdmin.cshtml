@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using ShopTFTEC.WebApp.Context;
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-area="Admin" asp-controller="Admin" class="nav-link" asp-action="Index">
+            Área do Administrador
+        </a>
+    }
+}

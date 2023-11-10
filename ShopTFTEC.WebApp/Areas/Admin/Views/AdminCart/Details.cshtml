@@ -1,0 +1,27 @@
+﻿@model CartViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h3>Detalhes do Pedido</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.CartHeader.FirstName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CartHeader.FirstName)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.CartHeader.LastName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CartHeader.LastName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CartHeader.Id">Editar</a> |
+    <a asp-action="Index" class="btn btn-outline-info">Retornar</a>
+</div>

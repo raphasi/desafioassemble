@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudShoes</title>
+
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap4-glyphicons/css/bootstrap-glyphicons.min.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="~/ShopTFTEC.WebApp.styles.css" asp-append-version="true" />
+    <link rel="stylesheel" href="~/font-awesome/css/fontawesome.css" />
+    <link rel="stylesheet" href="/css/mysite.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="/images/logo-tftec.png" height="100" width="200" class="img-fluid" asp-append-version="true" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a asp-area="" class="nav-link" asp-controller="Home" asp-action="Index">Todos Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area="" class="nav-link" asp-controller="Cart" asp-action="Index">
+                            Checkout
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <partial name="_LoginAdmin" class="nav-link" />
+                    </li>
+                </ul>
+                <ul class="nav-item">
+                    <partial name="_LoginPartial" class="nav-link" />
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <nav class="main-menu">
+            <ul>
+                @await Component.InvokeAsync("CategoriaMenu")
+                <li>
+
+                </li>
+
+
+
+            </ul>
+        </nav>
+
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-text">
+                <!-- logo -->
+                <a class="" href="index.html"><img class="img-fluid mb-6" height="75" width="150" src="~/images/logo-tipo.png" alt="logo" /></a>
+                <ul class="list-unstyled" style="color:white;">
+                    <li class="mb-2">CNPJ: 41.135.632/0001-40</li>
+                </ul>
+            </div>
+
+            <div class="footer-social d-flex justify-content-center">
+                <a href="https://www.youtube.com/channel/UCyFktIP0OmZDoIobmbEnyQQ?sub_confirmation=1"><i class="fa fa-youtube"></i></a>
+                <a href="https://www.facebook.com/tftectreinamentosonline"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/tftec.online/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/tftec-treinamentos-online-625816191/"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                <a href="" style="color:white;">
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> Todos os direitos reservados by <a href="https://tftec.com.br" target="_blank">TFTEC</a>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

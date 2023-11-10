@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administração CloudShoes</title>
+
+    <link rel="stylesheet" href="~/css/mysite_admin.css" />
+    <link rel="stylesheel" href="~/font-awesome/css/fontawesome.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Cloud Shoes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="AdminRoles" asp-action="Index">Gerenciar Roles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="AdminUsers" asp-action="Index">Gerenciar Usuários</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="AdminClaims" asp-action="Index">Gerenciar Claims</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="AdminImagens" asp-action="Index">Gerenciar Imagens</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="AdminProducts" asp-action="Index">Gerenciar Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="Admin" asp-controller="AdminCategories" asp-action="Index">Gerenciar Categorias</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer-section" style="bottom: 0px;    left: 0px;    right: 0px;    margin-bottom: 0px;">
+        <div class="container">
+            <div class="footer-text">
+                <!-- logo -->
+                <a class="" href="index.html"><img class="img-fluid mb-6" width="150" height="300" src="~/images/logo-tftec.png" alt="logo" /></a>
+                <ul class="list-unstyled" style="color:white;">
+                    <li class="mb-2">Porto Alegre, Rio Grande do Sul, BRASIL</li>
+                    <li class="mb-2">contato@tftec.com.br</li>
+                    <li class="mb-2"> +55 51 993287247</li>
+                    <li class="mb-2">CNPJ: 41.135.632/0001-40</li>
+                </ul>
+            </div>
+
+            <div class="footer-social d-flex justify-content-center">
+                <a href="https://www.youtube.com/channel/UCyFktIP0OmZDoIobmbEnyQQ?sub_confirmation=1"><i class="fa fa-youtube"></i></a>
+                <a href="https://www.facebook.com/tftectreinamentosonline"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/tftec.online/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/tftec-treinamentos-online-625816191/"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                <a href="" style="color:white;">
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> Todos os direitos reservados <i class="fa fa-cloud-upload" aria-hidden="true"></i> by <a href="https://tftec.com.br" target="_blank">TFTEC</a>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,13 @@
+﻿@foreach (var categoria in Model)
+{
+    <li>
+        <a asp-controller="Products" asp-action="List" asp-route-categoria="@categoria.Name">
+
+            <i class="fa fa-home fa-2x"></i>
+            <span class="nav-text">
+                @categoria.Name
+            </span>
+        </a>
+    </li>
+
+}

@@ -1,0 +1,45 @@
+﻿@model CartViewModel
+
+<div class="container">
+
+    <div id="carouselProdutos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img style="max-width:100%" src="~/images/concluido.png" class="d-block w-100" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <p>Cliente : <strong>@Model.CartHeader.FirstName</strong>
+            <p>Data do Pedido :  <strong>@DateTime.Now.ToString()</strong>
+            <p>Número do Pedido   : <strong>@Model.CartHeader.Id</strong></p>
+
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>Quantidade</th>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                </tr>
+                        @foreach (var item in Model.CartItems)
+                        {
+                    <tr>
+                        <td><img src="@item.Product.ImageURL" width="40" height="40" /></td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Product.Name</td>
+                        <td>@item.Product.Price</td>
+                    </tr>
+                        }
+            </table>
+
+            <h4>Valor Total do Pedido: <strong>@Model.CartHeader.TotalAmount.ToString("C2")</strong></h4>
+        </div>
+    </div>
+</div>
+<div class="form-group" style="text-align :center">
+    <h3>
+        <a class="nav-link text-info" asp-controller="Home" asp-action="Index">Retornar</a>
+    </h3>
+</div>

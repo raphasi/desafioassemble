@@ -1,0 +1,13 @@
+﻿@model IEnumerable<ShopTFTEC.WebApp.Models.ProductViewModel>
+
+<partial name="_Carousel" />
+
+<h2>Cloud Shoes</h2>
+<h4>A Maior loja Cloud de tenis da TFTEC! </h4>
+
+<div class="row">
+    @foreach (var produto in Model)
+    {
+        <partial name="_ProdutoResumo" for="@produto" />
+    }
+</div>

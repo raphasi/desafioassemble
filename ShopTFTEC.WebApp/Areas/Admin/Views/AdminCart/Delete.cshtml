@@ -1,0 +1,30 @@
+﻿@model CartViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h2>Deseja deletar este pedido ?</h2>
+<br />
+<h3><strong>Atenção !!! Ao deletar o pedido seus itens serão excluídos</strong></h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.CartHeader.FirstName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CartHeader.FirstName)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.CartHeader.LastName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CartHeader.LastName)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CartHeader.Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-outline-info">Retornar</a>
+    </form>
+</div>

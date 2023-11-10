@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\Views\AdminCart\**" />
+    <Compile Remove="Views\CategoriaMenu\**" />
+    <Compile Remove="Views\Shared\Components\CarrinhoCompraResumo\**" />
+    <Content Remove="Areas\Admin\Views\AdminCart\**" />
+    <Content Remove="Views\CategoriaMenu\**" />
+    <Content Remove="Views\Shared\Components\CarrinhoCompraResumo\**" />
+    <EmbeddedResource Remove="Areas\Admin\Views\AdminCart\**" />
+    <EmbeddedResource Remove="Views\CategoriaMenu\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\CarrinhoCompraResumo\**" />
+    <None Remove="Areas\Admin\Views\AdminCart\**" />
+    <None Remove="Views\CategoriaMenu\**" />
+    <None Remove="Views\Shared\Components\CarrinhoCompraResumo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\Controllers\AdminCartController.cs" />
+    <Compile Remove="Areas\Admin\Models\LoginViewModel.cs" />
+    <Compile Remove="Areas\Services\CategoryService.cs" />
+    <Compile Remove="Areas\Services\ICategoryService.cs" />
+    <Compile Remove="Areas\Services\IProductService.cs" />
+    <Compile Remove="Areas\Services\ProductService.cs" />
+    <Compile Remove="Components\CarrinhoCompraResumo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Products\CreateProduct.cshtml" />
+    <Content Remove="Views\Products\DeleteProduct.cshtml" />
+    <Content Remove="Views\Products\Index.cshtml" />
+    <Content Remove="Views\Products\UpdateProduct.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Admin\Views\AdminCategories\Create.cshtml" />
+    <None Include="Areas\Admin\Views\AdminCategories\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\AdminCategories\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\AdminCategories\Index.cshtml" />
+    <None Include="Areas\Admin\Views\AdminImagens\GetImagens.cshtml" />
+    <None Include="Areas\Admin\Views\AdminImagens\Index.cshtml" />
+    <None Include="Areas\Admin\Views\AdminImagens\UploadFiles.cshtml" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.22" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.22" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.22" />
+    <PackageReference Include="ReflectionIT.Mvc.Paging" Version="6.0.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.22.0" />
+  </ItemGroup>
+
+</Project>

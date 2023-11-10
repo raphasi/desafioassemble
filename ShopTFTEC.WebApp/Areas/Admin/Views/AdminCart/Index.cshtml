@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CartViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Checkouts</h3>
+
+@* <form method="get" class="form-inline">
+    
+    <input name="filter" class="form-control" placeholder="filtro"
+           value="@Model.RouteValue["Filter"]" />
+
+    <button type="submit" class="btn btn-info">Procurar</button>
+</form> *@
+
+Total de Pedidos : @Model.Count()
+@* <div>
+   <vc:pager paging-list="@Model"></vc:pager>
+</div> *@
+
+<p>
+    <a asp-action="Create">Criar novo Pedido</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CartHeader.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartHeader.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartHeader.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartHeader.TotalAmount)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CartHeader.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CartHeader.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CartHeader.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CartHeader.TotalAmount)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CartHeader.Id">Edita</a> |
+                    <a asp-action="Details" asp-route-id="@item.CartHeader.Id">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@@item.CartHeader.Id">Deleta</a> |
+                    <a asp-action="PedidoProduto" asp-route-id="@item.CartHeader.Id">Ver Itens</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
